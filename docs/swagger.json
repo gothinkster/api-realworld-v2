@@ -616,7 +616,7 @@
         }
       }
     },
-    "/articles/{slug}/comments/{id}": {
+    "/articles/comments/{id}": {
       "delete": {
         "summary": "Delete a comment for an article",
         "description": "Delete a comment for an article. Auth is required",

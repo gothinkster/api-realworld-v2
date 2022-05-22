@@ -57,7 +57,7 @@ router.post(
  * @param id id of the comment
  */
 router.delete(
-  '/articles/:slug/comments/:id',
+  '/articles/comments/:id',
   auth.required,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
