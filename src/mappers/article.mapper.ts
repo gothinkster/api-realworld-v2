@@ -6,7 +6,7 @@ const articleMapper = (article: ArticleQueryResponse, username?: string): Articl
   title: article.title,
   description: article.description,
   body: article.body,
-  tagList: article.tagList.map(tag => tag.name),
+  tags: article.tags.map(tag => tag.name),
   createdAt: article.createdAt,
   updatedAt: article.updatedAt,
   favorited: article.favoritedBy.some(item => item.username === username),

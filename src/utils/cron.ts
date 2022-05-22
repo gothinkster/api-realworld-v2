@@ -27,7 +27,7 @@ export const generateFakeData = async (): Promise<void> => {
       description:
         'Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more',
       body: 'See how the exact same Medium.com clone (called Conduit) is built using different frontends and backends. Yes, you can mix and match them, because they all adhere to the same API spec',
-      tagList: ['welcome', 'introduction'],
+      tags: ['welcome', 'introduction'],
     },
     user.username,
   );
@@ -52,7 +52,7 @@ export const generateFakeData = async (): Promise<void> => {
         'Over 100 implementations have been created using various languages, libraries, and frameworks.\n' +
         '\n' +
         'Explore them on CodebaseShow.',
-      tagList: ['codebaseShow', 'implementations'],
+      tags: ['codebaseShow', 'implementations'],
     },
     user.username,
   );
@@ -68,7 +68,7 @@ export const generateFakeData = async (): Promise<void> => {
       title: 'Create a new implementation',
       description: 'join the community by creating a new implementation',
       body: 'Share your knowledge and enpower the community by creating a new implementation',
-      tagList: ['implementations'],
+      tags: ['implementations'],
     },
     user.username,
   );

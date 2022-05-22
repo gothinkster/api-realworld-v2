@@ -43,7 +43,7 @@ describe('ArticleService', () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         authorId: 456,
-        tagList: [],
+        tags: [],
         favoritedBy: [],
         author: {
           username: 'RealWorld',
@@ -99,7 +99,7 @@ describe('ArticleService', () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         authorId: 456,
-        tagList: [],
+        tags: [],
         favoritedBy: [],
         author: {
           username: 'RealWorld',

@@ -905,7 +905,7 @@
         "body": {
           "type": "string"
         },
-        "tagList": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
@@ -934,7 +934,7 @@
         "title",
         "description",
         "body",
-        "tagList",
+        "tags",
         "createdAt",
         "updatedAt",
         "favorited",
@@ -978,7 +978,7 @@
         "body": {
           "type": "string"
         },
-        "tagList": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"

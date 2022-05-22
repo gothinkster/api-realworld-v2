@@ -54,7 +54,7 @@ const buildFindAllQuery = (
 
   if ('tag' in query) {
     queries.push({
-      tagList: {
+      tags: {
         some: {
           name: query.tag,
         },
@@ -131,8 +131,9 @@ export const createArticle = async (
   articlePayload: ArticleCreatePayload,
   username: string,
 ): Promise<ArticleResponse> => {
-  const { title, description, body, tagList } = articlePayload;
-  const tags = Array.isArray(tagList) ? tagList : [];
+  const { title, description, body } = articlePayload;
+  let { tags } = articlePayload;
+  tags = Array.isArray(tags) ? tags : [];
 
   if (!title) {
     throw new HttpException(422, { errors: { title: ["can't be blank"] } });
@@ -169,7 +170,7 @@ export const createArticle = async (
       description,
       body,
       slug,
-      tagList: {
+      tags: {
         connectOrCreate: tags.map((tag: string) => ({
           create: { name: tag },
           where: { name: tag },
@@ -208,7 +209,7 @@ const disconnectArticlesTags = async (slug: string): Promise<void> => {
       slug,
     },
     data: {
-      tagList: {
+      tags: {
         set: [],
       },
     },
@@ -265,9 +266,9 @@ export const updateArticle = async (
     }
   }
 
-  const tagList =
-    Array.isArray(article.tagList) && article.tagList?.length
-      ? article.tagList.map((tag: string) => ({
+  const tags =
+    Array.isArray(article.tags) && article.tags?.length
+      ? article.tags.map((tag: string) => ({
           create: { name: tag },
           where: { name: tag },
         }))
@@ -285,8 +286,8 @@ export const updateArticle = async (
       ...(article.description ? { description: article.description } : {}),
       ...(newSlug ? { slug: newSlug } : {}),
       updatedAt: new Date(),
-      tagList: {
-        connectOrCreate: tagList,
+      tags: {
+        connectOrCreate: tags,
       },
     },
     select: articleSelector,

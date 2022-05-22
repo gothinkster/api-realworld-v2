@@ -5,7 +5,7 @@ export interface ArticleCreatePayload {
   title: string;
   description: string;
   body: string;
-  tagList: ReadonlyArray<string>;
+  tags: ReadonlyArray<string>;
 }
 
 export interface ArticleFindQuery {
@@ -21,7 +21,7 @@ export interface ArticleQueryResponse {
   title: string;
   description: string;
   body: string;
-  tagList: ReadonlyArray<Tag>;
+  tags: ReadonlyArray<Tag>;
   createdAt: Date;
   updatedAt: Date;
   favoritedBy: ReadonlyArray<FollowersQueryReponse>;
@@ -33,7 +33,7 @@ export interface ArticleResponse {
   title: string;
   description: string;
   body: string;
-  tagList: ReadonlyArray<string>;
+  tags: ReadonlyArray<string>;
   createdAt: Date;
   updatedAt: Date;
   favorited: boolean;

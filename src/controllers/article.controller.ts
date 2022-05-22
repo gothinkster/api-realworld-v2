@@ -62,7 +62,7 @@ router.get(
  * @bodyparam  title
  * @bodyparam  description
  * @bodyparam  body
- * @bodyparam  tagList list of tags
+ * @bodyparam  tags list of tags
  * @returns article created article
  */
 router.post('/articles', auth.required, async (req: Request, res: Response, next: NextFunction) => {

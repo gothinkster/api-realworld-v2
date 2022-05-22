@@ -7,7 +7,7 @@ const articleSelector = Prisma.validator<Prisma.ArticleSelect>()({
   body: true,
   createdAt: true,
   updatedAt: true,
-  tagList: {
+  tags: {
     select: {
       name: true,
     },
