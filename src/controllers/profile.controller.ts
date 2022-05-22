@@ -27,11 +27,11 @@ router.get(
 /**
  * Follow user
  * @auth required
- * @route {POST} /profiles/:username/follow
+ * @route {PUT} /profiles/:username/follow
  * @param username string
  * @returns profile
  */
-router.post(
+router.put(
   '/profiles/:username/follow',
   auth.required,
   async (req: Request, res: Response, next: NextFunction) => {

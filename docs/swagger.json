@@ -199,7 +199,7 @@
       }
     },
     "/profiles/{username}/follow": {
-      "post": {
+      "put": {
         "summary": "Follow a user",
         "description": "Follow a user by username",
         "tags": ["Profile"],
