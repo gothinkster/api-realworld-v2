@@ -36,25 +36,21 @@ router.get('/articles', auth.optional, async (req: Request, res: Response, next:
 /**
  * Get paginated feed articles
  * @auth required
- * @route {GET} /articles/feed
+ * @route {GET} /feed
  * @returns articles list of articles
  */
-router.get(
-  '/articles/feed',
-  auth.required,
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const result = await getFeed(
-        Number(req.query.offset),
-        Number(req.query.limit),
-        req.user?.username as string,
-      );
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  },
-);
+router.get('/feed', auth.required, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const result = await getFeed(
+      Number(req.query.offset),
+      Number(req.query.limit),
+      req.user?.username as string,
+    );
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
+});
 
 /**
  * Create article
